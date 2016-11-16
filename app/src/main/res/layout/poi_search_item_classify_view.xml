@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#ffffffff"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:alpha="1.0">
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="180.0dip"
+            android:layout_weight="1.0">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <RelativeLayout android:gravity="center"
+                    android:background="@drawable/popupwindow_selector"
+                    android:paddingTop="@dimen/menu_padding_top"
+                    android:paddingBottom="@dimen/menu_padding_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ImageView
+                        android:id="@+id/img_food"
+                        android:layout_width="@dimen/menu_img_size"
+                        android:layout_height="@dimen/menu_img_size"
+                        android:src="@mipmap/voice_btn_normal"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:textSize="@dimen/menu_text_size"
+                        android:textColor="@color/popupwindow_item_text"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="美食"
+                        android:layout_below="@id/img_food"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_width="12.0dip"
+                    android:layout_height="12.0dip"
+                    android:layout_marginLeft="13.5dip"
+                    android:layout_marginBottom="22.5dip"
+                    android:src="@mipmap/recommend_red_notice" />
+            </FrameLayout>
+            <RelativeLayout android:gravity="center"
+                android:background="@drawable/popupwindow_selector"
+                android:paddingTop="0.0dip"
+                android:paddingBottom="@dimen/menu_padding_bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <ImageView android:id="@+id/img_spot"
+                    android:layout_width="@dimen/menu_img_size"
+                    android:layout_height="@dimen/menu_img_size"
+                    android:src="@mipmap/voice_btn_normal"
+                    android:layout_centerHorizontal="true" />
+                <TextView android:textSize="@dimen/menu_text_size"
+                    android:textColor="@color/popupwindow_item_text"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:text="景点"
+                    android:layout_below="@id/img_spot"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="180.0dip"
+            android:layout_weight="1.0">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <RelativeLayout android:gravity="center"
+                    android:background="@drawable/popupwindow_selector"
+                    android:paddingTop="@dimen/menu_padding_top"
+                    android:paddingBottom="@dimen/menu_padding_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ImageView android:id="@+id/img_hotel"
+                        android:layout_width="@dimen/menu_img_size"
+                        android:layout_height="@dimen/menu_img_size"
+                        android:src="@mipmap/voice_btn_normal"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:textSize="@dimen/menu_text_size"
+                        android:textColor="@color/popupwindow_item_text"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="酒店"
+                        android:layout_below="@id/img_hotel"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/more_setting_notice"
+                    android:visibility="gone"
+                    android:layout_width="12.0dip"
+                    android:layout_height="12.0dip"
+                    android:layout_marginLeft="13.5dip"
+                    android:layout_marginBottom="22.5dip"
+                    android:src="@mipmap/recommend_red_notice" />
+            </FrameLayout>
+            <RelativeLayout android:gravity="center"
+                android:background="@drawable/popupwindow_selector"
+                android:paddingTop="0.0dip"
+                android:paddingBottom="@dimen/menu_padding_bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <ImageView android:id="@+id/img_spot"
+                    android:layout_width="@dimen/menu_img_size"
+                    android:layout_height="@dimen/menu_img_size"
+                    android:src="@mipmap/voice_btn_normal"
+                    android:layout_centerHorizontal="true" />
+                <TextView android:textSize="@dimen/menu_text_size"
+                    android:textColor="@color/popupwindow_item_text"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:text="景点"
+                    android:layout_below="@id/img_spot"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="180.0dip"
+            android:layout_weight="1.0">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <RelativeLayout android:gravity="center"
+                    android:id="@+id/popup_setting"
+                    android:background="@drawable/popupwindow_selector"
+                    android:paddingTop="@dimen/menu_padding_top"
+                    android:paddingBottom="@dimen/menu_padding_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ImageView
+                        android:id="@+id/img_bus"
+                        android:layout_width="@dimen/menu_img_size"
+                        android:layout_height="@dimen/menu_img_size"
+                        android:src="@mipmap/voice_btn_normal"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:textSize="@dimen/menu_text_size"
+                        android:textColor="@color/popupwindow_item_text"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="公交站"
+                        android:layout_below="@id/img_bus"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_width="12.0dip"
+                    android:layout_height="12.0dip"
+                    android:layout_marginLeft="13.5dip"
+                    android:layout_marginBottom="22.5dip"
+                    android:src="@mipmap/recommend_red_notice" />
+            </FrameLayout>
+            <RelativeLayout android:gravity="center"
+                android:background="@drawable/popupwindow_selector"
+                android:paddingTop="0.0dip"
+                android:paddingBottom="@dimen/menu_padding_bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <ImageView android:id="@+id/img_fav"
+                    android:layout_width="@dimen/menu_img_size"
+                    android:layout_height="@dimen/menu_img_size"
+                    android:src="@mipmap/voice_btn_normal"
+                    android:layout_centerHorizontal="true" />
+                <TextView android:textSize="@dimen/menu_text_size"
+                    android:textColor="@color/popupwindow_item_text"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:text="收藏"
+                    android:layout_below="@id/img_fav"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="180.0dip"
+            android:layout_weight="1.0">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <RelativeLayout android:gravity="center"
+                    android:background="@drawable/popupwindow_selector"
+                    android:paddingTop="@dimen/menu_padding_top"
+                    android:paddingBottom="@dimen/menu_padding_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ImageView android:id="@+id/img_bank"
+                        android:layout_width="@dimen/menu_img_size"
+                        android:layout_height="@dimen/menu_img_size"
+                        android:src="@mipmap/voice_btn_normal"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:textSize="@dimen/menu_text_size"
+                        android:textColor="@color/popupwindow_item_text"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="银行"
+                        android:layout_below="@id/img_bank"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_width="12.0dip"
+                    android:layout_height="12.0dip"
+                    android:layout_marginLeft="13.5dip"
+                    android:layout_marginBottom="22.5dip"
+                    android:src="@mipmap/recommend_red_notice" />
+            </FrameLayout>
+            <RelativeLayout android:gravity="center"
+                android:background="@drawable/popupwindow_selector"
+                android:paddingTop="0.0dip"
+                android:paddingBottom="@dimen/menu_padding_bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <ImageView android:id="@+id/img_more"
+                    android:layout_width="@dimen/menu_img_size"
+                    android:layout_height="@dimen/menu_img_size"
+                    android:src="@mipmap/voice_btn_normal"
+                    android:layout_centerHorizontal="true" />
+                <TextView android:textSize="@dimen/menu_text_size"
+                    android:textColor="@color/popupwindow_item_text"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:text="更多"
+                    android:layout_below="@id/img_more"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:background="#ffdadada"
+        android:layout_width="fill_parent"
+        android:layout_height="2.0px"
+        android:layout_alignParentBottom="true" />
+</LinearLayout>

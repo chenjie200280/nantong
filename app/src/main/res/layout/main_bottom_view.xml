@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:layout_alignParentBottom="true"
+    android:minHeight="@dimen/v4_map_bottom_tabwidget_minheight"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:background="#ffdadada"
+        android:layout_width="fill_parent"
+        android:layout_height="2.0px"
+        android:layout_alignParentBottom="true" />
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:minHeight="@dimen/v4_map_bottom_tabwidget_minheight">
+        <RelativeLayout
+            android:id="@+id/tab_nearby"
+            android:background="@color/transparent"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <TextView android:gravity="center"
+                android:id="@+id/tv_fujin"
+                android:paddingTop="2.5dip"
+                android:text="@string/tab_nearby"
+                android:drawableLeft="@mipmap/main_tips_nearby"
+                style="@style/Style_Default_Fragment_MapBottom_TabWidget"/>
+            <ImageView
+                android:id="@+id/nearby_tip"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/idle_info"
+                android:layout_toRightOf="@id/tv_fujin"
+                android:layout_above="@id/tv_fujin"
+                android:contentDescription="@null" />
+            <ImageView
+                android:id="@+id/nearby_ugly_tip_guide"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/default_fragment_bottom_tip_arrow"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab_route"
+            android:background="@drawable/default_fragment_tabitem_bg"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <TextView android:gravity="center"
+                android:id="@+id/route_text"
+                android:paddingTop="2.5dip"
+                android:text="@string/tab_route"
+                android:drawableLeft="@mipmap/tips_route_new"
+                style="@style/Style_Default_Fragment_MapBottom_TabWidget" />
+            <ImageView
+                android:id="@+id/tab_route_red_flag"
+                android:background="@mipmap/idle_info"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-3.0dip"
+                android:layout_marginBottom="-4.0dip"
+                android:layout_toRightOf="@id/route_text"
+                android:layout_above="@id/route_text" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab_more"
+            android:background="@drawable/default_fragment_tabitem_bg"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <TextView android:gravity="center"
+                android:id="@+id/text_more"
+                android:paddingTop="2.5dip"
+                android:text="@string/tab_mine"
+                android:drawableLeft="@mipmap/main_mine"
+                style="@style/Style_Default_Fragment_MapBottom_TabWidget" />
+            <ImageView android:id="@+id/tab_more_red_flag"
+                android:background="@mipmap/idle_info"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-3.0dip"
+                android:layout_marginBottom="-4.0dip"
+                android:layout_toRightOf="@id/text_more"
+                android:layout_above="@id/text_more" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
