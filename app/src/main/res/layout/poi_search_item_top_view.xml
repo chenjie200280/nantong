@@ -7,21 +7,23 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="52dp"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:gravity="center">
         <!--返回按钮-->
         <ImageButton
             android:id="@+id/poi_serach_item_back"
-            android:layout_width="@dimen/title_back_width"
-            android:layout_height="@dimen/title_back_height"
-            android:layout_gravity="center_vertical"
-            android:background="@mipmap/title_back_normal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_back"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:scaleType="centerInside" />
         <!--搜索btn-->
         <Button
             android:id="@+id/search_btn"
             android:layout_width="55dp"
-            android:layout_height="fill_parent"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:textColor="@color/white"
             android:background="@drawable/bg_serach"
@@ -41,12 +43,16 @@
             android:paddingLeft="10dp"
             android:layout_gravity="center"
             android:drawableLeft="@mipmap/search_icon"
-            android:background="@drawable/bg_edittext"
+            android:background="@drawable/bg_poi_edittext_shape"
             android:layout_centerVertical="true"
             android:inputType="text"
-            android:hint="搜索"
+            android:hint="请输入关键词"
+            android:textColorHint="#bcbbbb"
             android:singleLine="true"
-            android:textColor="#FFFAFA"/>
+            android:textCursorDrawable="@null"
+            android:textColor="#686868"
+            android:textSize="@dimen/default_font_size_t30"
+            />
     </RelativeLayout>
     <TextView
         android:background="#ffdadada"

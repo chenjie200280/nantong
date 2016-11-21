@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+     
+    <item android:state_pressed="true">
+          <layer-list>
+           <!-- 相当于padding -->
+           <item android:left="1dp" android:top="1dp" android:bottom="1dp" android:right="1dp">
+            <shape>
+             <solid android:color="@color/gray1" />
+             <corners android:radius="3dip"/>
+            </shape>
+           </item>
+          </layer-list>
+         </item>
+
+    <item>
+          <layer-list>
+           <!-- 阴影图层 -->
+           <item android:left="1px" android:top="1px" android:bottom="1px" android:right="1px">
+            <shape>
+             <solid android:color="#18000000" />
+             <corners android:radius="3dip"/>
+            </shape>
+           </item>
+           <!-- 内容图层 -->
+           <!-- 相当于padding -->
+           <item  android:bottom="1dp" android:right="1dp" android:left="1dp" android:top="1dp" >
+            <shape>
+             <solid android:color="@color/white" />
+             <corners android:radius="3dip"/>
+            </shape>
+           </item>
+          </layer-list>
+         </item>
+</selector>

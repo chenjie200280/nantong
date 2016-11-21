@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00000000</color>
+    <color name="default_font_color_c33">#ff333333</color>
+    <color name="default_font_color_c66">#a4666666</color>
+    <color name="default_font_color_cad">#ffadadad</color>
+    <color name="popupwindow_item_text">#ff5e5e5e</color>
+    <color name="more_poi_press">#ffebebeb</color>
+    <color name="more_poi_item_text">#ff5e5e5e</color>
+    <color name="bg_blue_pressed">#2b7eec</color>
+    <color name="bg_blue_normal">#3f91ff</color>
+    <color name="white">#ffffff</color>
+    <color name="gray1">#ffebebeb</color>
 </resources>

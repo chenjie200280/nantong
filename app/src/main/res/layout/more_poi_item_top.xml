@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="54dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:padding="5dp"
+        >
+        <!--返回按钮-->
+        <ImageButton
+            android:id="@+id/poi_serach_item_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_back"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerInside" />
+        <!--搜索关健词-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/default_font_size_t32"
+            android:text="更多"
+            />
+    </RelativeLayout>
+    <TextView
+        android:background="#ffdadada"
+        android:layout_width="fill_parent"
+        android:layout_height="2.0px"
+        android:layout_alignParentBottom="true" />
+</LinearLayout>

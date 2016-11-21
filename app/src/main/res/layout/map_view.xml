@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/map_view_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+    <com.easymap.android.maps.v3.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="52dp"
+
+        />
+    <!--主界面顶部搜索-->
+    <include layout="@layout/map_top_view"/>
+    <!--底部控件-->
+    <include layout="@layout/main_bottom_view"/>
+    <!--GPS 定位按钮 控件-->
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="62dp"
+        android:src="@mipmap/nav_gps"
+        android:background="@drawable/bg_maptool"
+        />
+    <!--放大缩小 控件-->
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="70dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/zoomin_idle_tool"
+            android:scaleType="centerInside" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/zoomout_idle_tool"
+            android:scaleType="centerInside" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/index_background"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#63000000" />
+    <!--图层控制-->
+    <ImageButton
+        android:id="@+id/layer_switch_imgbtn"
+        android:visibility="visible"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="75dp"
+        android:src="@mipmap/map_layer_change"
+        android:background="@drawable/bg_maptool"
+        android:elevation="1dip"
+        />
+    <LinearLayout
+        android:id="@+id/layer_switch_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:layout_marginTop="75dp"
+        android:gravity="right"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/layer_switch_close_ib"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/common_close_bar"
+            android:background="@drawable/bg_layer_close_shape"
+            />
+        <TextView
+            android:background="#e6e4e4"
+            android:layout_width="40dp"
+            android:layout_height="1px"
+            />
+        <include layout="@layout/main_layout_switch_view"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
+

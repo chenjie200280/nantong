@@ -2,4 +2,20 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="v4_map_bottom_tabwidget_minheight">52dp</dimen>
+    <dimen name="default_font_size_t28">14.0dip</dimen>
+    <dimen name="default_font_size_t30">15.0dip</dimen>
+    <dimen name="top_searchbar_height">50.0dip</dimen>
+    <dimen name="default_font_size_t32">16.0dip</dimen>
+    <dimen name="menu_img_size_height">23.329987dip</dimen>
+    <dimen name="menu_img_size_width">11.659973dip</dimen>
+    <dimen name="menu_text_size">11.0sp</dimen>
+    <dimen name="menu_img_size">30.329987dip</dimen>
+    <dimen name="menu_padding">8.0dip</dimen>
+    <dimen name="menu_padding_bottom">12.0dip</dimen>
+    <dimen name="menu_padding_top">24.0dip</dimen>
+
+
+    <dimen name="title_back_width">40.0dp</dimen>
+    <dimen name="title_back_height">40.0dp</dimen>
 </resources>

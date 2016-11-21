@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">nantong</string>
+    <string name="tab_nearby">附近</string>
+    <string name="tab_route">路线</string>
+    <string name="tab_mine">我的</string>
+    <string name="title_search_hint">查找地点、酒店、美食</string>
+    <string name="voice_input">语音输入</string>
+    <string name="act_search_arround_bar">搜索</string>
 </resources>

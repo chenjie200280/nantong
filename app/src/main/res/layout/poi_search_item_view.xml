@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/poi_serach_item_ll"
     android:orientation="vertical"
+    android:visibility="gone"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

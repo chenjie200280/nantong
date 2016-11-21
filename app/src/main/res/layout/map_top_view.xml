@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/background_with_shadow"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+
+
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_searchbar_height"
+        style="@style/map_interactive_layout_top">
+        <TextView
+            android:id="@+id/map_top_tv"
+            android:textSize="@dimen/default_font_size_t30"
+            android:textColor="@color/default_font_color_c66"
+            android:gravity="center_vertical"
+            android:paddingLeft="15.0dip"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/title_search_hint"
+            android:drawableLeft="@drawable/map_search_bg_selector"
+            android:drawablePadding="10dp"
+            android:contentDescription="@string/title_search_hint" />
+    </RelativeLayout>
+</LinearLayout>

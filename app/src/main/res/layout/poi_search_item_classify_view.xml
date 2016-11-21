@@ -20,7 +20,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/popupwindow_selector"
+                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -52,13 +52,13 @@
                     android:src="@mipmap/recommend_red_notice" />
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/popupwindow_selector"
+                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
-                <ImageView android:id="@+id/img_spot"
+                <ImageView android:id="@+id/img_gas"
                     android:layout_width="@dimen/menu_img_size"
                     android:layout_height="@dimen/menu_img_size"
                     android:src="@mipmap/voice_btn_normal"
@@ -69,8 +69,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7.0dip"
-                    android:text="景点"
-                    android:layout_below="@id/img_spot"
+                    android:text="加油站"
+                    android:layout_below="@id/img_gas"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </LinearLayout>
@@ -83,7 +83,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/popupwindow_selector"
+                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -115,7 +115,7 @@
                     android:src="@mipmap/recommend_red_notice" />
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/popupwindow_selector"
+                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
@@ -147,7 +147,7 @@
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
                     android:id="@+id/popup_setting"
-                    android:background="@drawable/popupwindow_selector"
+                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -179,7 +179,7 @@
                     android:src="@mipmap/recommend_red_notice" />
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/popupwindow_selector"
+                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
@@ -196,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7.0dip"
-                    android:text="收藏"
+                    android:text="公厕"
                     android:layout_below="@id/img_fav"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
@@ -210,7 +210,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/popupwindow_selector"
+                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -241,7 +241,7 @@
                     android:src="@mipmap/recommend_red_notice" />
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/popupwindow_selector"
+                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"

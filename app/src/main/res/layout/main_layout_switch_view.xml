@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:background="#ffffffff"
-        android:layout_width="fill_parent"
+        android:background="@drawable/bg_view"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:alpha="1.0">
         <LinearLayout android:orientation="vertical"
         android:layout_width="0.0dip"
-        android:layout_height="130dip"
+        android:layout_height="100dip"
         android:layout_weight="1.0">
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0">
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/popupwindow_selector"
+                android:background="@drawable/more_poi_selector"
                 android:paddingTop="@dimen/menu_padding_top"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
                 <ImageView
-                    android:id="@+id/img_food"
-                    android:layout_width="153dip"
-                    android:layout_height="99dip"
+                    android:id="@+id/vec_layer_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:src="@mipmap/maplayer_manager_2d_hl"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
@@ -37,21 +36,21 @@
     </LinearLayout>
         <LinearLayout android:orientation="vertical"
             android:layout_width="0.0dip"
-            android:layout_height="130.0dip"
+            android:layout_height="100.0dip"
             android:layout_weight="1.0">
             <FrameLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/popupwindow_selector"
+                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent">
-                    <ImageView android:id="@+id/img_hotel"
-                        android:layout_width="153dip"
-                        android:layout_height="99dip"
+                    <ImageView android:id="@+id/img_layer_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:src="@mipmap/maplayer_manager_sate"
                         android:layout_centerHorizontal="true" />
                 </RelativeLayout>
@@ -61,4 +60,3 @@
     </LinearLayout>
 
 
-</RelativeLayout>
