@@ -23,7 +23,7 @@ public class PoiService {
      * distances=500
     **/
     String bufferUrl = "http://www.mapha.com.cn/ArcGIS/rest/services/Geometry/GeometryServer/buffer";
-    String poiUrl = "http://218.2.102.194/ntpoiquery/PoiItems/query";
+    String poiUrl = "http://218.2.102.194/ntpoiquery/PoiItems/query/";
     /**
      * 获取周围边面积
      */
@@ -67,6 +67,7 @@ public class PoiService {
         RequestParams params = new RequestParams(poiUrl);
         params.addParameter("where","domainname like '%"+keyword+"%'");
         params.addParameter("count",10);
+
         Callback.Cancelable cancelable = x.http().get(params,new Callback.CacheCallback<String>(){
             @Override
             public void onSuccess(String s) {
@@ -89,6 +90,7 @@ public class PoiService {
                 return false;
             }
         });
+
     }
 
 }

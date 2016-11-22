@@ -40,6 +40,7 @@ public class PoiAction {
         poiService.getPoiByWord(keyword,10, new Callback.CommonCallback() {
             @Override
             public void onSuccess(Object o) {
+
                 callback.onSuccess(o);
             }
             @Override
