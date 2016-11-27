@@ -12,14 +12,33 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.easymap.android.maps.v3.EzMap;
 import com.easymap.android.maps.v3.MapView;
+import com.easymap.android.maps.v3.geometry.Envelope;
 import com.easymap.android.maps.v3.geometry.GeoPoint;
+import com.easymap.android.maps.v3.geometry.SpatialReference;
+import com.easymap.android.maps.v3.graphics.BitmapDescriptor;
+import com.easymap.android.maps.v3.graphics.BitmapDescriptorFactory;
+import com.easymap.android.maps.v3.graphics.Marker;
+import com.easymap.android.maps.v3.layers.GraphicsLayer;
 import com.tianditu.nantong.action.PoiAction;
 import com.tianditu.nantong.control.MapControl;
 import com.tianditu.nantong.model.LayerType;
 import com.tianditu.nantong.service.PoiService;
+import com.tianditu.nantong.utils.YouMiAdUtil;
+
+import net.youmi.android.AdManager;
+import net.youmi.android.normal.banner.BannerManager;
+import net.youmi.android.normal.banner.BannerViewListener;
+import net.youmi.android.normal.common.ErrorCode;
+import net.youmi.android.normal.spot.SpotListener;
+import net.youmi.android.normal.spot.SpotManager;
+import net.youmi.android.normal.video.VideoAdListener;
+import net.youmi.android.normal.video.VideoAdManager;
+import net.youmi.android.normal.video.VideoAdSettings;
 
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.ContentView;
@@ -59,8 +78,11 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
     ImageButton layer_switch_close_ib;
     @ViewInject(R.id.map_view_rl)
     RelativeLayout map_view_rl;
+
     @ViewInject(R.id.map_top_tv)
-    RelativeLayout map_top_rl;
+    TextView map_top_tv;
+
+
     @ViewInject(R.id.poi_serach_item_ll)
     LinearLayout poi_serach_item_ll;
     //搜索界面
@@ -71,24 +93,75 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
     EditText poi_serach_item_et;
 
 
+    @ViewInject(R.id.ll_banner)
+    RelativeLayout ll_banner;
+
+    @ViewInject(R.id.tab_nearby)
+    RelativeLayout tab_nearby;
+
+    @ViewInject(R.id.tab_route)
+    RelativeLayout tab_route;
+
     //地图控件
     private MapControl mapControl;
 
     private PoiAction poiAction;
 
+
+    YouMiAdUtil youMiAdUtil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
+        initAd();
         initMapView(savedInstanceState);
         poiAction = new PoiAction();
+    }
 
+
+    private void initAd(){
+        String app_id = this.getResources().getString(R.string.app_id);
+        String ad_id = this.getResources().getString(R.string.ad_id);
+        youMiAdUtil = new YouMiAdUtil(this,app_id,ad_id);
+        youMiAdUtil.showBanner(ll_banner);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // 插播广告
+        SpotManager.getInstance(MainActivity.this).onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 插播广告
+        SpotManager.getInstance(MainActivity.this).onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 插播广告
+        SpotManager.getInstance(MainActivity.this).onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        // 如果有需要，可以点击后退关闭插播广告。
+        if (SpotManager.getInstance(MainActivity.this).isSpotShowing()) {
+            SpotManager.getInstance(MainActivity.this).hideSpot();
+        }
     }
     @Override
     public void onStatusChanged(STATUS status) {
         mapControl = new MapControl();
         mapControl.initEzMap(mapView.getMap());
     }
+
+
 
     //弹出图层切换界面
     @Event(value={R.id.layer_switch_imgbtn})
@@ -98,7 +171,14 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
         layer_swtich_imgbtn.setVisibility(View.GONE);
     }
 
-
+    @Event(value = {R.id.tab_nearby})
+    private  void onTabNearByClick(View view){
+        youMiAdUtil.showSpot();
+    }
+    @Event(value = {R.id.tab_route})
+    private  void onTabRouteByClick(View view){
+        youMiAdUtil.showSpot();
+    }
     //矢量影像切换
     @Event(value = {R.id.vec_layer_iv,R.id.img_layer_iv})
     private void onVecLayerSwitchClick(View view){
@@ -129,25 +209,36 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
         mapControl.getEzMap().refreshMap();
     }
 
+
+    private BitmapDescriptor iconcircle;
+    private Marker marker;
     //poi关键字搜索
     @Event(value = {R.id.search_btn})
     private void onSearchBtnClick(View view){
+
         poiAction.getPoiByWord(poi_serach_item_et.getText().toString(), new Callback.CommonCallback() {
             @Override
             public void onSuccess(Object o) {
-                Log.i("test","1");
-            }
 
+                   for(int i=0;i<10;i++){
+                       iconcircle = new BitmapDescriptorFactory().fromAsset("b_poi_"+(i+1)+".png");
+                       //new BitmapDescriptorFactory().fromResource(MainActivity.this,R.mipmap.b_poi_1);
+                       // 根据点的位置创建一个Marker的实例
+
+                       marker = new Marker(new GeoPoint(120.81+0.01*i, 31.99-(i-0.01*i)), iconcircle, 1f, 1f);
+                       mapControl.getGraphicslayer().addGraphic(marker);
+                   }
+
+
+            }
             @Override
             public void onError(Throwable throwable, boolean b) {
 
             }
-
             @Override
             public void onCancelled(CancelledException e) {
 
             }
-
             @Override
             public void onFinished() {
 

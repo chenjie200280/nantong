@@ -1,7 +1,10 @@
 package com.tianditu.nantong.control;
 
 import com.easymap.android.maps.v3.EzMap;
+import com.easymap.android.maps.v3.geometry.Envelope;
 import com.easymap.android.maps.v3.geometry.GeoPoint;
+import com.easymap.android.maps.v3.geometry.SpatialReference;
+import com.easymap.android.maps.v3.layers.GraphicsLayer;
 import com.easymap.android.maps.v3.layers.ezmap.EzMapVMLayer;
 import com.easymap.android.maps.v3.layers.ogc.WMTSLayer;
 import com.easymap.android.maps.v3.layers.ogc.WMTSLayerInfo;
@@ -21,6 +24,9 @@ public class MapControl {
     private Map<String, Object> vectorLayers;
     //影像图层方案
     private Map<String, Object> imageLayers;
+
+
+    private GraphicsLayer graphicslayer;
     //当前显示方案
     private String layerType = LayerType.VEC;
     public void initEzMap(EzMap ezMap) {
@@ -34,11 +40,13 @@ public class MapControl {
         ezMap.centerAt(new GeoPoint(120.81, 31.99), false);
         //初始化图层
         initLayers();
+
         //加载矢量图层
         ezMap.setCompassVisible(false);
         ezMap.setZoomControlsVisible(false);
         ezMap.setWaterMarkerVisible(false);
         ezMap.setScaleViewVisible(false);
+        ezMap.setTiltableByGesture(false);
         ezMap.setMyLocationControlVisible(false);
     }
     /**
@@ -67,6 +75,7 @@ public class MapControl {
         cvaWMTSLayerInfo.setTileMatrixSet("c");
         cvaWMTSLayer = new WMTSLayer("http://t0.tianditu.com/cva_c/wmts", cvaWMTSLayerInfo, "tdt_cva.cache", "/mnt/sdcard/EzMap(2)/st");
         vectorLayers.put("tdt_cva",cvaWMTSLayer);
+
 
         //矢量底图
         WMTSLayerInfo vecWMTSLayerInfo;
@@ -106,8 +115,16 @@ public class MapControl {
         ciaWMTSLayer.setVisible(false);
         imageLayers.put("tdt_cia",ciaWMTSLayer);
 
+        Envelope envelope = new Envelope();
+        envelope.setxMax(180);
+        envelope.setxMin(-180);
+        envelope.setyMax(90);
+        envelope.setyMin(-90);
+        graphicslayer = new GraphicsLayer(SpatialReference.create(4326), envelope);
+        ezMap.addLayer(graphicslayer);
         ezMap.addLayer(imgWMTSLayer);
         ezMap.addLayer(ciaWMTSLayer);
+
     }
 
     /**
@@ -154,6 +171,13 @@ public class MapControl {
     }
 
 
+    public GraphicsLayer getGraphicslayer() {
+        return graphicslayer;
+    }
+
+    public void setGraphicslayer(GraphicsLayer graphicslayer) {
+        this.graphicslayer = graphicslayer;
+    }
     public EzMap getEzMap() {
         return ezMap;
     }

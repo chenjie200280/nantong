@@ -26,6 +26,7 @@
             android:background="@color/transparent"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
+            android:clickable="true"
             android:layout_weight="1.0">
             <TextView android:gravity="center"
                 android:id="@+id/tv_fujin"
