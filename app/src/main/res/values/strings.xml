@@ -8,4 +8,15 @@
     <string name="act_search_arround_bar">搜索</string>
     <string name="app_id">00471b3cfc6e855d</string>
     <string name="ad_id">a7536e763a0656c9</string>
+
+    <!--poi分类-->
+    <string name="menu_meishi">美食</string>
+    <string name="menu_jiudian">酒店</string>
+    <string name="menu_bus">公交站</string>
+    <string name="menu_bank">银行</string>
+    <string name="menu_jingdian">景点</string>
+    <string name="menu_gas">加油站</string>
+    <string name="menu_park">停车场</string>
+    <string name="menu_shopping">停车场</string>
+
 </resources>
