@@ -8,6 +8,7 @@
     <color name="default_font_color_c66">#a4666666</color>
     <color name="default_font_color_cad">#ffadadad</color>
     <color name="popupwindow_item_text">#ff5e5e5e</color>
+    <color name="text_color">#ff5e5e5e</color>
     <color name="more_poi_press">#ffebebeb</color>
     <color name="more_poi_item_text">#ff5e5e5e</color>
     <color name="bg_blue_pressed">#2b7eec</color>
