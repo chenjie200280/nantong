@@ -3,7 +3,6 @@ package com.tianditu.nantong;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -13,32 +12,26 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.easymap.android.maps.v3.EzMap;
 import com.easymap.android.maps.v3.MapView;
-import com.easymap.android.maps.v3.geometry.Envelope;
+
 import com.easymap.android.maps.v3.geometry.GeoPoint;
-import com.easymap.android.maps.v3.geometry.SpatialReference;
+
 import com.easymap.android.maps.v3.graphics.BitmapDescriptor;
 import com.easymap.android.maps.v3.graphics.BitmapDescriptorFactory;
 import com.easymap.android.maps.v3.graphics.Marker;
-import com.easymap.android.maps.v3.layers.GraphicsLayer;
+
 import com.tianditu.nantong.action.PoiAction;
 import com.tianditu.nantong.control.MapControl;
 import com.tianditu.nantong.model.LayerType;
-import com.tianditu.nantong.service.PoiService;
+
 import com.tianditu.nantong.utils.YouMiAdUtil;
 
-import net.youmi.android.AdManager;
-import net.youmi.android.normal.banner.BannerManager;
-import net.youmi.android.normal.banner.BannerViewListener;
-import net.youmi.android.normal.common.ErrorCode;
-import net.youmi.android.normal.spot.SpotListener;
+
 import net.youmi.android.normal.spot.SpotManager;
-import net.youmi.android.normal.video.VideoAdListener;
-import net.youmi.android.normal.video.VideoAdManager;
-import net.youmi.android.normal.video.VideoAdSettings;
+
 
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.ContentView;
@@ -47,6 +40,7 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
 
 
 @ContentView(R.layout.main_activity)
@@ -102,6 +96,9 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
     @ViewInject(R.id.tab_route)
     RelativeLayout tab_route;
 
+    @ViewInject(R.id.tab_more)
+    RelativeLayout tab_more;
+
     //地图控件
     private MapControl mapControl;
 
@@ -155,6 +152,7 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
             SpotManager.getInstance(MainActivity.this).hideSpot();
         }
     }
+
     @Override
     public void onStatusChanged(STATUS status) {
         mapControl = new MapControl();
@@ -173,12 +171,23 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
 
     @Event(value = {R.id.tab_nearby})
     private  void onTabNearByClick(View view){
-        youMiAdUtil.showSpot();
+        InputMethodManager inputMethodManager=(InputMethodManager) poi_serach_item_et.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        //map_top_ll
+        poi_serach_item_ll.setVisibility(View.VISIBLE);
+        map_view_rl.setVisibility(View.GONE);
+        poi_serach_item_et.requestFocus();
+        inputMethodManager.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
     }
     @Event(value = {R.id.tab_route})
     private  void onTabRouteByClick(View view){
         youMiAdUtil.showSpot();
     }
+
+    @Event(value = {R.id.tab_more})
+    private  void onTabMoreByClick(View view){
+        youMiAdUtil.showSpot();
+    }
+
     //矢量影像切换
     @Event(value = {R.id.vec_layer_iv,R.id.img_layer_iv})
     private void onVecLayerSwitchClick(View view){
@@ -208,7 +217,6 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
         mapControl.getEzMap().centerAt(geoPoint, false);
         mapControl.getEzMap().refreshMap();
     }
-
 
     private BitmapDescriptor iconcircle;
     private Marker marker;
@@ -264,7 +272,6 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
         poi_serach_item_ll.setVisibility(View.VISIBLE);
         map_view_rl.setVisibility(View.GONE);
         poi_serach_item_et.requestFocus();
-
         inputMethodManager.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
     }
     @Event(value = {R.id.poi_serach_item_back})
@@ -293,4 +300,6 @@ public class MainActivity extends Activity implements EzMap.OnStatusChangeListen
             mapView.onCreate(savedInstanceState);
         }
     }
+
+
 }

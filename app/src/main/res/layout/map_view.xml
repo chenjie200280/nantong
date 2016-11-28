@@ -34,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="70dp">
+        android:layout_marginBottom="60dp">
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"

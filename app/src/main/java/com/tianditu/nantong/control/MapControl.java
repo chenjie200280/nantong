@@ -1,15 +1,25 @@
 package com.tianditu.nantong.control;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+
 import com.easymap.android.maps.v3.EzMap;
 import com.easymap.android.maps.v3.geometry.Envelope;
 import com.easymap.android.maps.v3.geometry.GeoPoint;
 import com.easymap.android.maps.v3.geometry.SpatialReference;
+import com.easymap.android.maps.v3.graphics.BitmapDescriptor;
+import com.easymap.android.maps.v3.graphics.BitmapDescriptorFactory;
 import com.easymap.android.maps.v3.layers.GraphicsLayer;
+import com.easymap.android.maps.v3.layers.MyLocationLayer;
 import com.easymap.android.maps.v3.layers.ezmap.EzMapVMLayer;
 import com.easymap.android.maps.v3.layers.ogc.WMTSLayer;
 import com.easymap.android.maps.v3.layers.ogc.WMTSLayerInfo;
 import com.tianditu.nantong.model.LayerType;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +37,9 @@ public class MapControl {
 
 
     private GraphicsLayer graphicslayer;
+
+    private MyLocationLayer myLocationLayer;
+
     //当前显示方案
     private String layerType = LayerType.VEC;
     public void initEzMap(EzMap ezMap) {
@@ -121,9 +134,38 @@ public class MapControl {
         envelope.setyMax(90);
         envelope.setyMin(-90);
         graphicslayer = new GraphicsLayer(SpatialReference.create(4326), envelope);
-        ezMap.addLayer(graphicslayer);
+
         ezMap.addLayer(imgWMTSLayer);
         ezMap.addLayer(ciaWMTSLayer);
+
+        ezMap.addLayer(graphicslayer);
+
+        myLocationLayer = new MyLocationLayer();
+        ezMap.addLayer(myLocationLayer);
+
+
+        Location location = new Location("1");
+        location.setLongitude(120.81);
+        location.setLatitude(31.99);
+
+        double longtitude = location.getLongitude();
+        double latitude = location.getLatitude();
+        /*
+        BitmapDescriptor iconloaciton = null;
+        try {
+            iconloaciton = new BitmapDescriptorFactory().fromAsset("navi_car_locked.png");
+        }catch (Exception e){
+
+        }
+        myLocationLayer.setIcon(iconloaciton);
+        */
+        myLocationLayer.setLocation(location);
+        DecimalFormat df = new DecimalFormat("#0.000000");
+        myLocationLayer.setFillColor(Color.BLACK);
+        myLocationLayer.setStrokeWidth(5);
+        myLocationLayer.setMode(MyLocationLayer.LocationMode.FOLLOWING);
+        ezMap.centerAt(new GeoPoint(longtitude, latitude), false);
+        myLocationLayer.refresh();
 
     }
 

@@ -25,4 +25,9 @@
     <dimen name="menu_padding_top">5.0dip</dimen>
     <dimen name="menu_padding_bottom">5.0dip</dimen>
     <dimen name="menu_height">160dip</dimen>
+    <!--图层切换-->
+    <dimen name="layer_switch_top">14dip</dimen>
+    <dimen name="layer_switch_bottom">14dip</dimen>
+
+
 </resources>

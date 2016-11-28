@@ -76,7 +76,6 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -100,7 +99,6 @@
                 </RelativeLayout>
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
@@ -109,7 +107,8 @@
                 <ImageView android:id="@+id/img_gas"
                     android:layout_width="@dimen/menu_img_size"
                     android:layout_height="@dimen/menu_img_size"
-                    android:src="@drawable/meishi_btn_selector"
+                    android:src="@drawable/gas_btn_selector"
+                    android:clickable="true"
                     android:layout_centerHorizontal="true" />
                 <TextView android:textSize="@dimen/menu_text_size"
                     android:textColor="@color/text_color"
@@ -117,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7.0dip"
-                    android:text="加油站"
+                    android:text="@string/menu_gas"
                     android:layout_below="@id/img_gas"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
@@ -132,7 +131,6 @@
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
                     android:id="@+id/popup_setting"
-                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -157,7 +155,6 @@
                 </RelativeLayout>
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
@@ -166,15 +163,16 @@
                 <ImageView android:id="@+id/img_fav"
                     android:layout_width="@dimen/menu_img_size"
                     android:layout_height="@dimen/menu_img_size"
-                    android:src="@drawable/meishi_btn_selector"
+                    android:src="@drawable/park_btn_selector"
+                    android:clickable="true"
                     android:layout_centerHorizontal="true" />
                 <TextView android:textSize="@dimen/menu_text_size"
-                    android:textColor="@color/popupwindow_item_text"
+                    android:textColor="@color/text_color"
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7.0dip"
-                    android:text="停车场"
+                    android:text="@string/menu_park"
                     android:layout_below="@id/img_fav"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
@@ -188,7 +186,6 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0">
                 <RelativeLayout android:gravity="center"
-                    android:background="@drawable/more_poi_selector"
                     android:paddingTop="@dimen/menu_padding_top"
                     android:paddingBottom="@dimen/menu_padding_bottom"
                     android:layout_width="fill_parent"
@@ -196,22 +193,22 @@
                     <ImageView android:id="@+id/img_bank"
                         android:layout_width="@dimen/menu_img_size"
                         android:layout_height="@dimen/menu_img_size"
-                        android:src="@drawable/meishi_btn_selector"
+                        android:clickable="true"
+                        android:src="@drawable/bank_btn_selector"
                         android:layout_centerHorizontal="true" />
                     <TextView
                         android:textSize="@dimen/menu_text_size"
-                        android:textColor="@color/popupwindow_item_text"
+                        android:textColor="@color/text_color"
                         android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7.0dip"
-                        android:text="银行"
+                        android:text="@string/menu_bank"
                         android:layout_below="@id/img_bank"
                         android:layout_centerHorizontal="true" />
                 </RelativeLayout>
             </FrameLayout>
             <RelativeLayout android:gravity="center"
-                android:background="@drawable/more_poi_selector"
                 android:paddingTop="0.0dip"
                 android:paddingBottom="@dimen/menu_padding_bottom"
                 android:layout_width="fill_parent"
@@ -220,15 +217,16 @@
                 <ImageView android:id="@+id/img_more"
                     android:layout_width="@dimen/menu_img_size"
                     android:layout_height="@dimen/menu_img_size"
-                    android:src="@drawable/meishi_btn_selector"
+                    android:clickable="true"
+                    android:src="@drawable/shopping_btn_selector"
                     android:layout_centerHorizontal="true" />
                 <TextView android:textSize="@dimen/menu_text_size"
-                    android:textColor="@color/popupwindow_item_text"
+                    android:textColor="@color/text_color"
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7.0dip"
-                    android:text="超市"
+                    android:text="@string/menu_shopping"
                     android:layout_below="@id/img_more"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
